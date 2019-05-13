@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         forInView()
         Switchway(types: "中等")
         ArrayConfig()
+        Dictionary()
         
         JudgeNormal()
         JudgeKind()
@@ -146,6 +147,43 @@ class ViewController: UIViewController {
         print(array1)
         
     }
+    
+    // 自定义字典
+    func  Dictionary() -> () {
+        
+        var dict = ["name":"张三","age":"20"] as [String :Any]
+        var dict2 = ["class":"三班","title":"主题班会"]
+        
+        for e in dict2{
+            
+            dict[e.key] = dict2[e.key]
+        }
+        print(dict)
+    
+        
+        // 字典遍历
+        var dict3 = ["title":"标题","subtitle":"副标题","content":"内容"]
+        
+        for e in dict3
+        {
+//            print("\(e.key)\(e.value)")
+        }
+        
+        for (k,v) in dict3
+        {
+            print("\(k) \(v)")
+        }
+        
+        // 移除字典中的元素
+        dict3.removeValue(forKey: "title")
+        print(dict3)
+        
+        
+    }
+    
+    
+    
+    
     
   
     // 基本数据类型计算
