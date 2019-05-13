@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2053B0922894B53008EAF67 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2053B0822894B53008EAF67 /* TableViewController.swift */; };
+		A2053B0B22894B67008EAF67 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2053B0A22894B67008EAF67 /* CollectionViewController.swift */; };
 		A2EB8E76228551B30070E45A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EB8E75228551B30070E45A /* AppDelegate.swift */; };
 		A2EB8E78228551B30070E45A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EB8E77228551B30070E45A /* ViewController.swift */; };
 		A2EB8E7B228551B30070E45A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EB8E79228551B30070E45A /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2053B0822894B53008EAF67 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A2053B0A22894B67008EAF67 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		A2EB8E72228551B30070E45A /* BaseSwiftControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseSwiftControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EB8E75228551B30070E45A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2EB8E77228551B30070E45A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			children = (
 				A2EB8E75228551B30070E45A /* AppDelegate.swift */,
 				A2EB8E77228551B30070E45A /* ViewController.swift */,
+				A2053B0822894B53008EAF67 /* TableViewController.swift */,
+				A2053B0A22894B67008EAF67 /* CollectionViewController.swift */,
 				A2EB8E79228551B30070E45A /* Main.storyboard */,
 				A2EB8E7F228551B50070E45A /* Assets.xcassets */,
 				A2EB8E81228551B50070E45A /* LaunchScreen.storyboard */,
@@ -262,6 +268,8 @@
 				A2EB8E78228551B30070E45A /* ViewController.swift in Sources */,
 				A2EB8E76228551B30070E45A /* AppDelegate.swift in Sources */,
 				A2EB8E7E228551B30070E45A /* BaseSwiftControl.xcdatamodeld in Sources */,
+				A2053B0922894B53008EAF67 /* TableViewController.swift in Sources */,
+				A2053B0B22894B67008EAF67 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

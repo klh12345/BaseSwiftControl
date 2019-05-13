@@ -8,11 +8,16 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+     
+        view.backgroundColor = UIColor.white
+        
+        
+        SetnavigationBar()
         ColorView()
         TitleButton()
         label()
@@ -27,6 +32,8 @@ class ViewController: UIViewController {
         JudgeKind()
         privateWay(title: "你好", num: 6)
        
+        nextControl()
+        
     }
 
     @objc func clicks(btn:UIButton)->() {
@@ -35,10 +42,34 @@ class ViewController: UIViewController {
     }
     
     
+    // 导航栏设置
+    func SetnavigationBar() -> () {
+        
+        
+        self.navigationController?.navigationBar.backgroundColor = UIColor.orange
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+        self.navigationItem.title = "首页"
+        self.navigationController?.navigationBar.barTintColor = UIColor.cyan
+        let dic = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 17.0),NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = dic
+        
+        let rightButton = UIBarButtonItem(title: "跳转", style: .plain, target: self, action: #selector(jump))
+        self.navigationItem.rightBarButtonItem = rightButton
+        
+        
+    }
+    
+    
+    
+    @objc func jump() {
+        print("点击了导航栏右侧的跳转按钮...")
+    }
+    
     // UIView
     func ColorView() -> () {
         // 新建一个View
-        let colorView = UIView(frame: CGRect(x:40,y:100,width:50,height:50));
+        let colorView = UIView(frame: CGRect(x:10,y:50,width:400,height:30));
         colorView.backgroundColor = UIColor.init(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0);
         view.addSubview(colorView);
         
@@ -46,9 +77,9 @@ class ViewController: UIViewController {
     
     // UIButton
     func TitleButton() -> () {
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 45, height: 45));
+        let button = UIButton(frame: CGRect(x: 10, y: 100, width: 400, height: 30));
         button.setTitle("标题", for: UIControl.State.normal);
-        button.backgroundColor = UIColor.black
+        button.backgroundColor = UIColor.lightGray
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0)
         button.setTitleColor(UIColor.lightGray, for: UIControl.State.normal)
         button.setImage(UIImage(named: "icon"), for: UIControl.State.normal);
@@ -177,6 +208,13 @@ class ViewController: UIViewController {
         // 移除字典中的元素
         dict3.removeValue(forKey: "title")
         print(dict3)
+     
+        // 定义字典格式的数组
+        let array = [
+            ["name":"张三","age":"20"],
+            ["name":"李四","age":"21"]
+        ]
+        print(array)
         
         
     }
@@ -208,6 +246,53 @@ class ViewController: UIViewController {
     }
     
     
+    // 控制器跳转
+    func nextControl() -> () {
+        
+        let button = UIButton.init(frame: CGRect(x: 10, y: 300, width: 400, height: 30))
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        button.backgroundColor = UIColor.lightGray
+        button.setTitle("跳转到TableView页面", for: UIControl.State.normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0)
+        button.addTarget(self, action: #selector(buttonClicks), for: .touchUpInside)
+        view.addSubview(button)
+
+        
+        let button2 = UIButton.init(frame: CGRect(x: 10, y: 350, width: 400, height: 30))
+        button2.setTitle("跳转到CollectionView页面", for: UIControl.State.normal)
+        button2.backgroundColor = UIColor.lightGray
+        button2.titleLabel?.font = UIFont.systemFont(ofSize: 13.0)
+        button2.addTarget(self, action: #selector(buttonClicks), for: .touchUpInside)
+        view.addSubview(button2)
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    @objc func buttonClicks(btn:UIButton) -> () {
+        
+        if btn.currentTitle == "跳转到TableView页面" {
+            print("到tableView页面")
+            
+            let tableView = TableViewController()
+            self.navigationController?.pushViewController(tableView, animated: true)
+            
+        }else{
+            print("到CollectionView页面")
+            
+            let collectionView = CollectionViewController()
+            self.navigationController?.pushViewController(collectionView, animated: true)
+            
+        }
+        
+        
+    }
     
     
     
