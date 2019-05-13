@@ -18,8 +18,9 @@ class ViewController: UIViewController {
         label()
         imageView()
         
-        
+        forInView()
         Switchway(types: "中等")
+        ArrayConfig()
         
         JudgeNormal()
         JudgeKind()
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
         
         let label = UILabel(frame: CGRect(x: 50, y: 200, width: 200, height: 25))
         label.textColor = UIColor.lightGray
-        label.text = "我是label";
+        label.text = "System Will Printful A label";
         label.font = UIFont.systemFont(ofSize: 13.0)
         view.addSubview(label)
         
@@ -102,7 +103,47 @@ class ViewController: UIViewController {
             break
         }
         
-       
+    }
+    
+    
+    //for 循环语句
+    func forInView()->() {
+        
+        // reversed 可以从后往前遍历
+        for i in(0..<5).reversed(){
+            print(i)
+        }
+        
+        for i in 0..<10 {
+            print(i)
+        }
+        print("------")
+        // 这里的第三个. 跟上面的<功能相同
+        for i in 0...5 {
+            print(i)
+        }
+   
+    }
+   
+    
+    
+    // 自定义数组
+    func ArrayConfig() -> () {
+        
+        // Swift 中 数组没有可变与不可变的区分
+        var array1 = ["张三","李四","王五"]
+        let array2 = ["1","2","3"]
+        
+        let arr = array1 + array2
+        print(arr)
+        
+        // 添加元素
+        array1.append("增加")
+        print(array1)
+        
+        //修改元素 通过下标修改
+        array1[0] = "修改"
+        print(array1)
         
     }
     
